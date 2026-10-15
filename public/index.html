@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sonali & Dr. Sudev — One Love Story | Wedding Celebration</title>
+    <meta name="description" content="Join us in celebrating the wedding of Dr. Sonali & Dr. Sudev. Balle-Balle Meets Ayyioo! December 10-11, 2026.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas for Confetti Fireworks -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Floating Petals Container -->
+    <div id="petalsContainer" aria-hidden="true"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand" aria-label="Sonali and Sudev Wedding">
+                <span class="monogram">S&S</span>
+                <span class="nav-brand-text">Sonali & Sudev</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#scratch-station" class="nav-link">Reveal Cards</a>
+                <a href="#clock-section" class="nav-link">Countdown</a>
+                <a href="#events" class="nav-link">Celebrations</a>
+                <a href="#rsvp" class="nav-link">RSVP</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="icon-btn" title="Toggle Light / Dark Mode" aria-label="Toggle theme">
+                    <span class="theme-icon light-icon">☀️</span>
+                    <span class="theme-icon dark-icon">🌙</span>
+                </button>
+
+                <!-- Sound Effects Toggle -->
+                <button id="sfxToggle" class="icon-btn active" title="Sound Effects (Scratch & Chimes)" aria-label="Toggle sound effects">
+                    <span id="sfxIcon">🔔</span>
+                </button>
+
+                <!-- Music Player Toggle -->
+                <button id="musicToggle" class="music-btn" title="Toggle Wedding Music" aria-label="Toggle background music">
+                    <div class="sound-bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="music-label">Shehnai</span>
+                </button>
+
+                <!-- Admin Modal Trigger -->
+                <button id="adminToggle" class="admin-pill-btn" title="View Guest RSVPs & Stats">
+                    <span>📋</span>
+                    <span class="admin-text">Guest List</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-overlay"></div>
+        
+        <!-- Floating Cultural Instruments -->
+        <div class="cultural-float dhol-float" title="Balle-Balle Punjabi Dhol">
+            <span class="instrument-emoji">🥁</span>
+            <span class="instrument-tag">Balle-Balle!</span>
+        </div>
+        
+        <div class="cultural-float pungi-float" title="Ayyioo South Indian Nadaswaram">
+            <span class="instrument-emoji">🎺</span>
+            <span class="instrument-tag">Ayyioo!</span>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-sparkle">✨</span>
+                <span>Two Souls • One Beautiful Love Story</span>
+                <span class="badge-sparkle">✨</span>
+            </div>
+
+            <p class="family-invitation">Together With Their Families</p>
+
+            <h1 class="couple-title">
+                <span class="name bride">Dr. Sonali</span>
+                <span class="ampersand">&</span>
+                <span class="name groom">Dr. Sudev</span>
+            </h1>
+
+            <div class="wedding-announcement">
+                <span class="married-text">are getting married!</span>
+                <div class="fusion-tag">
+                    <span class="fusion-firework">🎉</span>
+                    <span class="fusion-highlight">Balle-Balle Meets Ayyioo</span>
+                    <span class="fusion-firework">🎊</span>
+                </div>
+            </div>
+
+            <p class="hero-description">
+                Join us for a celebration of two beautiful souls, and the joy of bringing families together across Punjabi beats and South Indian grace.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#scratch-station" class="btn btn-primary pulse-btn">
+                    <span>✨ Scratch to Reveal Secrets ✨</span>
+                </a>
+                <a href="#rsvp" class="btn btn-secondary">
+                    <span>Confirm Attendance 💌</span>
+                </a>
+            </div>
+
+            <a href="#scratch-station" class="scroll-indicator" aria-label="Scroll down">
+                <span class="scroll-mouse"></span>
+                <span class="scroll-arrow">↓</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Scratchcards Section -->
+    <section class="scratch-station-section" id="scratch-station">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-eyebrow">Interactive Experience</span>
+                <h2 class="section-title">Scratch & Reveal</h2>
+                <p class="section-subtitle">
+                    Swipe with your mouse or drag with your finger across the golden foils to unveil our wedding secrets!
+                </p>
+                <div class="scratch-controls">
+                    <button id="magicRevealBtn" class="btn-micro" title="Reveal both cards instantly">
+                        🪄 Magic Reveal Both
+                    </button>
+                    <button id="resetScratchBtn" class="btn-micro secondary" title="Re-coat foils and scratch again">
+                        🔄 Scratch Again
+                    </button>
+                </div>
+            </div>
+
+            <div class="scratch-cards-grid">
+                <!-- Scratch Card 1: The Wedding Date -->
+                <div class="scratch-card-box" id="dateCardBox">
+                    <div class="scratch-card-badge">Card 1 • The Big Day</div>
+                    
+                    <div class="scratch-card-canvas-wrapper" id="dateCanvasWrapper">
+                        <!-- Secret Content Underneath -->
+                        <div class="scratch-hidden-content date-reveal-content">
+                            <div class="reveal-icon">💍</div>
+                            <span class="reveal-mini-label">The Wedding Day</span>
+                            <div class="reveal-highlight-date">Friday, December 11, 2026</div>
+                            <div class="reveal-details-row">
+                                <span class="reveal-pill">🕒 Muhurtham: 6:00 PM IST</span>
+                                <span class="reveal-pill">📍 The Grand Palace, New Delhi</span>
+                            </div>
+                            <p class="reveal-quote">"Two lives, two hearts, joined together in friendship, united forever in love."</p>
+                            <a href="#clock-section" class="reveal-action-link">⏳ View Simplified Clock Below ↓</a>
+                        </div>
+
+                        <!-- Canvas Foil Layer -->
+                        <canvas id="dateScratchCanvas" class="scratch-canvas"></canvas>
+                        
+                        <!-- Instruction Overlay -->
+                        <div class="scratch-prompt-overlay" id="datePrompt">
+                            <span class="scratch-coin-icon">🪙</span>
+                            <span class="scratch-prompt-text">Scratch Gold Foil with Finger/Mouse</span>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" id="dateProgressBar" style="width: 0%;"></div>
+                            </div>
+                            <span class="progress-percent" id="dateProgressText">0% Scratched</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scratch Card 2: The Wedding Theme -->
+                <div class="scratch-card-box" id="themeCardBox">
+                    <div class="scratch-card-badge">Card 2 • Dress Code & Theme</div>
+
+                    <div class="scratch-card-canvas-wrapper" id="themeCanvasWrapper">
+                        <!-- Secret Content Underneath -->
+                        <div class="scratch-hidden-content theme-reveal-content">
+                            <div class="reveal-icon">🎨</div>
+                            <span class="reveal-mini-label">The Wedding Theme</span>
+                            <div class="reveal-highlight-theme">Rainbow of Emotions</div>
+                            <p class="theme-tagline">A vibrant blend of Punjabi zest & South Indian regal charm</p>
+                            
+                            <div class="theme-palette-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-circle mehndi-swatch"></span>
+                                    <span class="swatch-name">Lush Green</span>
+                                    <span class="swatch-event">Mehendi</span>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-circle sagan-swatch"></span>
+                                    <span class="swatch-name">Royal Black</span>
+                                    <span class="swatch-event">Sagan</span>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-circle haldi-swatch"></span>
+                                    <span class="swatch-name">Lavender</span>
+                                    <span class="swatch-event">Haldi</span>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-circle wedding-swatch"></span>
+                                    <span class="swatch-name">Rainbow Gold</span>
+                                    <span class="swatch-event">Shaadi</span>
+                                </div>
+                            </div>
+                            <div class="theme-dress-tip">
+                                💡 <em>Dress Tip: Wear your brightest traditional silks, sherwanis, or lehengas!</em>
+                            </div>
+                        </div>
+
+                        <!-- Canvas Foil Layer -->
+                        <canvas id="themeScratchCanvas" class="scratch-canvas"></canvas>
+
+                        <!-- Instruction Overlay -->
+                        <div class="scratch-prompt-overlay" id="themePrompt">
+                            <span class="scratch-coin-icon">✨</span>
+                            <span class="scratch-prompt-text">Scratch Rose Foil with Finger/Mouse</span>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" id="themeProgressBar" style="width: 0%;"></div>
+                            </div>
+                            <span class="progress-percent" id="themeProgressText">0% Scratched</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simplified Clock Section -->
+    <section class="clock-section" id="clock-section">
+        <div class="section-container">
+            <div class="clock-wrapper">
+                <div class="clock-badge">
+                    <span class="clock-pulse-dot"></span>
+                    <span>Live Wedding Countdown</span>
+                </div>
+
+                <h3 class="clock-heading">Approaching The Auspicious Moment</h3>
+                <p class="clock-subheading">December 11, 2026 • 6:00 PM IST</p>
+
+                <!-- Simplified, Sleek Clock Display -->
+                <div class="simplified-clock-capsule" id="weddingClock">
+                    <div class="clock-unit-pill">
+                        <span class="clock-val" id="clockDays">00</span>
+                        <span class="clock-label">Days</span>
+                    </div>
+                    <span class="clock-separator">:</span>
+
+                    <div class="clock-unit-pill">
+                        <span class="clock-val" id="clockHours">00</span>
+                        <span class="clock-label">Hours</span>
+                    </div>
+                    <span class="clock-separator">:</span>
+
+                    <div class="clock-unit-pill">
+                        <span class="clock-val" id="clockMinutes">00</span>
+                        <span class="clock-label">Minutes</span>
+                    </div>
+                    <span class="clock-separator">:</span>
+
+                    <div class="clock-unit-pill highlight">
+                        <span class="clock-val" id="clockSeconds">00</span>
+                        <span class="clock-label">Seconds</span>
+                    </div>
+                </div>
+
+                <!-- Calendar Action Pill -->
+                <div class="clock-footer-actions">
+                    <button id="addCalendarBtn" class="btn-calendar" title="Save Date to Google Calendar or Download .ics">
+                        <span>📅 Add to Calendar</span>
+                    </button>
+                    <span class="clock-note">✨ Blessings & celebrations await! ✨</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Celebrations Section -->
+    <section class="events-section" id="events">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-eyebrow">Four Days of Joy</span>
+                <h2 class="section-title">Wedding Itinerary & Themes</h2>
+                <p class="section-subtitle">Moments of togetherness, love, and sacred celebrations</p>
+            </div>
+
+            <div class="events-grid">
+                <!-- Event 1: Mehendi -->
+                <div class="event-card tilt-card mehndi-theme" data-tilt>
+                    <div class="event-card-inner">
+                        <div class="event-icon-circle">🌺</div>
+                        <h3 class="event-title">Mehendi</h3>
+                        <div class="event-meta">
+                            <span class="event-date-badge">December 10 • Afternoon</span>
+                        </div>
+                        <p class="event-description">
+                            Colors bloom, henna flows, hearts celebrate. Intricate artistry, vibrant joy, and beautiful traditions come alive.
+                        </p>
+                        
+                        <!-- Interactive Theme Foil Badge -->
+                        <div class="event-theme-box" onclick="toggleEventTheme(this)">
+                            <div class="theme-unrevealed">
+                                <span class="sparkle-spin">✨</span>
+                                <span>Tap to Reveal Theme</span>
+                            </div>
+                            <div class="theme-revealed">
+                                <span class="theme-color-chip chip-green"></span>
+                                <span class="theme-text">🟢 Lush Green</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2: Sagan -->
+                <div class="event-card tilt-card sagan-theme" data-tilt>
+                    <div class="event-card-inner">
+                        <div class="event-icon-circle">🎭</div>
+                        <h3 class="event-title">Sagan</h3>
+                        <div class="event-meta">
+                            <span class="event-date-badge">December 10 • Evening</span>
+                        </div>
+                        <p class="event-description">
+                            Elegance meets grace. Two families unite with formal acceptance, blessings flow, and traditions honor the beginning.
+                        </p>
+
+                        <div class="event-theme-box" onclick="toggleEventTheme(this)">
+                            <div class="theme-unrevealed">
+                                <span class="sparkle-spin">✨</span>
+                                <span>Tap to Reveal Theme</span>
+                            </div>
+                            <div class="theme-revealed">
+                                <span class="theme-color-chip chip-black"></span>
+                                <span class="theme-text">🖤 Elegant Black</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3: Haldi -->
+                <div class="event-card tilt-card haldi-theme" data-tilt>
+                    <div class="event-card-inner">
+                        <div class="event-icon-circle">✨</div>
+                        <h3 class="event-title">Haldi</h3>
+                        <div class="event-meta">
+                            <span class="event-date-badge">December 11 • Afternoon</span>
+                        </div>
+                        <p class="event-description">
+                            Golden turmeric, playful moments, intimate bonding. A surprise celebration wrapped in tradition and love.
+                        </p>
+
+                        <div class="event-theme-box" onclick="toggleEventTheme(this)">
+                            <div class="theme-unrevealed">
+                                <span class="sparkle-spin">✨</span>
+                                <span>Tap to Reveal Theme</span>
+                            </div>
+                            <div class="theme-revealed">
+                                <span class="theme-color-chip chip-lavender"></span>
+                                <span class="theme-text">💜 Soft Lavender</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4: Wedding -->
+                <div class="event-card tilt-card wedding-theme highlight-card" data-tilt>
+                    <div class="event-card-inner">
+                        <div class="event-icon-circle">💍</div>
+                        <h3 class="event-title">Wedding</h3>
+                        <div class="event-meta">
+                            <span class="event-date-badge auspicious">December 11 • Evening (6 PM)</span>
+                        </div>
+                        <p class="event-description">
+                            Sacred vows, eternal love. Two hearts become one, families unite, and a beautiful new chapter begins with blessings.
+                        </p>
+                        <div class="blessing-highlight">✨ Happiness & Blessings ✨</div>
+
+                        <div class="event-theme-box special" onclick="toggleEventTheme(this)">
+                            <div class="theme-unrevealed">
+                                <span class="sparkle-spin">✨</span>
+                                <span>Tap to Reveal Theme</span>
+                            </div>
+                            <div class="theme-revealed">
+                                <span class="theme-color-chip chip-rainbow"></span>
+                                <span class="theme-text">🎨 Rainbow of Emotions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section with Email Dispatching Backend -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="section-container">
+            <div class="rsvp-card">
+                <div class="rsvp-ornament">🕊️</div>
+                <h2 class="rsvp-title">Join Us In Celebration</h2>
+                <p class="rsvp-subtitle">
+                    We would be honored by your presence as we celebrate this beautiful union of love, culture, and togetherness.
+                </p>
+
+                <!-- Status Feedback Message -->
+                <div id="rsvpAlert" class="alert-box" style="display: none;"></div>
+
+                <form class="rsvp-form" id="rsvpForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rsvpName">Your Full Name <span class="required">*</span></label>
+                            <input type="text" id="rsvpName" name="name" placeholder="Dr. / Mr. / Ms. Your Name" required>
+                            <span class="field-error" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rsvpEmail">Your Email Address <span class="required">*</span></label>
+                            <input type="email" id="rsvpEmail" name="email" placeholder="you@example.com (for confirmation mail)" required>
+                            <span class="field-error" id="emailError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rsvpAttendance">Will You Join Us? <span class="required">*</span></label>
+                            <select id="rsvpAttendance" name="attendance" required>
+                                <option value="">Select your attendance response</option>
+                                <option value="yes">✨ Yes, I'll joyfully be there!</option>
+                                <option value="no">💙 Unable to attend (Sending warm blessings)</option>
+                            </select>
+                            <span class="field-error" id="attendanceError"></span>
+                        </div>
+
+                        <div class="form-group" id="guestsCountGroup">
+                            <label for="rsvpGuests">Number of Guests</label>
+                            <select id="rsvpGuests" name="guestsCount">
+                                <option value="1">1 Person</option>
+                                <option value="2" selected>2 Persons</option>
+                                <option value="3">3 Persons</option>
+                                <option value="4">4 Persons</option>
+                                <option value="5">5+ Persons</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row" id="foodRow">
+                        <div class="form-group">
+                            <label for="rsvpFood">Food Preference <span class="required">*</span></label>
+                            <select id="rsvpFood" name="food">
+                                <option value="vegetarian">🥗 Pure Vegetarian Delights</option>
+                                <option value="north">🥘 North Indian Royal Feast</option>
+                                <option value="south">🍛 South Indian Traditional Sadhya</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rsvpPhone">Phone Number (Optional)</label>
+                            <input type="tel" id="rsvpPhone" name="phone" placeholder="+91 98765 43210">
+                        </div>
+                    </div>
+
+                    <!-- Events Checkboxes -->
+                    <div class="form-group full-width" id="eventsGroup">
+                        <label class="group-label">Events You Will Attend:</label>
+                        <div class="checkbox-pills-row">
+                            <label class="pill-check">
+                                <input type="checkbox" name="events" value="Mehendi" checked>
+                                <span>🌺 Mehendi (Dec 10)</span>
+                            </label>
+                            <label class="pill-check">
+                                <input type="checkbox" name="events" value="Sagan" checked>
+                                <span>🎭 Sagan (Dec 10)</span>
+                            </label>
+                            <label class="pill-check">
+                                <input type="checkbox" name="events" value="Haldi" checked>
+                                <span>✨ Haldi (Dec 11)</span>
+                            </label>
+                            <label class="pill-check">
+                                <input type="checkbox" name="events" value="Wedding" checked>
+                                <span>💍 Wedding (Dec 11)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="rsvpMessage">Warm Wishes or Special Notes</label>
+                        <textarea id="rsvpMessage" name="message" rows="3" placeholder="Share your heartfelt blessing or dietary note for Dr. Sonali & Dr. Sudev..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-rsvp-submit" id="rsvpSubmitBtn">
+                        <span class="btn-text">Confirm Attendance ✨</span>
+                        <span class="btn-loader" style="display: none;">Sending confirmation & email... ⏳</span>
+                    </button>
+                    <p class="email-notice">
+                        📧 <em>An instant confirmation email will be sent to your inbox upon submission.</em>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <h3 class="footer-names">Dr. Sonali & Dr. Sudev</h3>
+            <div class="footer-emojis">🌸 💚 🌺</div>
+            <p class="footer-date">December 10 - 11, 2026 • New Delhi, India</p>
+            <p class="footer-blessing">With love and blessings from our families</p>
+            <div class="footer-divider"></div>
+            <p class="footer-tagline">Two souls, one beautiful love story</p>
+            <p class="footer-copy">© 2026 Sonali & Sudev Wedding Celebration. Crafted with Love & Antigravity.</p>
+        </div>
+    </footer>
+
+    <!-- RSVP Success Modal -->
+    <div class="modal-backdrop" id="successModal">
+        <div class="modal-card">
+            <div class="modal-icon">🎉</div>
+            <h3 class="modal-title" id="modalTitle">RSVP Confirmed!</h3>
+            <p class="modal-message" id="modalMessage">
+                Thank you! Your response has been joyfully recorded and emails have been dispatched.
+            </p>
+            
+            <div class="email-preview-badge" id="emailPreviewBadge" style="display: none;">
+                <span>📧 Notification Mail Sent!</span>
+                <a href="#" target="_blank" id="emailPreviewLink" class="preview-link">
+                    Open Sent Email Preview ↗
+                </a>
+            </div>
+
+            <button class="btn btn-primary" id="closeModalBtn">Wonderful! Close</button>
+        </div>
+    </div>
+
+    <!-- Admin Drawer / Modal for Host to View All RSVPs -->
+    <div class="modal-backdrop" id="adminModal">
+        <div class="modal-card admin-modal-card">
+            <div class="modal-header-row">
+                <h3>📋 Wedding RSVP Guestbook & Stats</h3>
+                <button class="close-icon-btn" id="closeAdminBtn">&times;</button>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="admin-stats-grid">
+                <div class="admin-stat-box">
+                    <span class="stat-number" id="statTotalRSVPs">0</span>
+                    <span class="stat-label">Total Submissions</span>
+                </div>
+                <div class="admin-stat-box green">
+                    <span class="stat-number" id="statAttending">0</span>
+                    <span class="stat-label">Attending</span>
+                </div>
+                <div class="admin-stat-box gold">
+                    <span class="stat-number" id="statTotalGuests">0</span>
+                    <span class="stat-label">Total Headcount</span>
+                </div>
+                <div class="admin-stat-box red">
+                    <span class="stat-number" id="statDeclined">0</span>
+                    <span class="stat-label">Declined</span>
+                </div>
+            </div>
+
+            <!-- Table of Responses -->
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Guest Name</th>
+                            <th>Status</th>
+                            <th>Guests</th>
+                            <th>Food</th>
+                            <th>Email</th>
+                            <th>Submitted</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminTableBody">
+                        <tr><td colspan="7" class="loading-cell">Loading guest list...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="admin-modal-footer">
+                <button class="btn-micro" id="refreshAdminBtn">🔄 Refresh Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Temple Bells Music Audio -->
+    <audio id="bgMusic" loop preload="none">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JavaScript App -->
+    <script src="script.js"></script>
+</body>
+</html>

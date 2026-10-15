@@ -1,0 +1,17 @@
+[
+  {
+    "id": "rsvp_1792091514266_8oofe",
+    "name": "Ananya Sharma",
+    "email": "ananya.sharma@example.com",
+    "phone": "",
+    "attendance": "yes",
+    "food": "north",
+    "guestsCount": 2,
+    "events": [
+      "Mehendi",
+      "Wedding"
+    ],
+    "message": "Heartiest congratulations to Sonali & Sudev! Cannot wait to dance!",
+    "createdAt": "2026-10-15T19:11:54.266Z"
+  }
+]

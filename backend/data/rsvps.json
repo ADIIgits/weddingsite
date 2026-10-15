@@ -1,0 +1,111 @@
+[
+  {
+    "id": "rsvp_1792096109817_psvpd",
+    "name": "Aditya",
+    "email": "adityalpu27@gmail.com",
+    "phone": "9821910258",
+    "attendance": "yes",
+    "events": [
+      "Mehendi",
+      "Sagan",
+      "Haldi",
+      "Wedding"
+    ],
+    "message": "Best wishes from Bina! See you on Dec 11!",
+    "createdAt": "2026-10-15T20:28:29.817Z"
+  },
+  {
+    "id": "rsvp_1792095143239_sgj9b",
+    "name": "Adi",
+    "email": "adityalpu27@gmail.com",
+    "phone": "9821910258",
+    "attendance": "yes",
+    "events": [
+      "Mehendi",
+      "Sagan",
+      "Haldi",
+      "Wedding"
+    ],
+    "message": "Heartiest congratulations Dr. Sonali & Dr. Sudev! So excited for the wedding!",
+    "createdAt": "2026-10-15T20:12:23.239Z"
+  },
+  {
+    "id": "rsvp_1792094840143_7mep4",
+    "name": "adi",
+    "email": "adityalpu27@gmail.com",
+    "phone": "9821910258",
+    "attendance": "yes",
+    "events": [
+      "Mehendi",
+      "Sagan",
+      "Haldi",
+      "Wedding"
+    ],
+    "message": "yooo les go",
+    "createdAt": "2026-10-15T20:07:20.143Z"
+  },
+  {
+    "id": "rsvp_1792093320577_mb1ow",
+    "name": "adi",
+    "email": "adityalpu27@gmail.com",
+    "phone": "9821910258",
+    "attendance": "yes",
+    "events": [
+      "Mehendi",
+      "Sagan",
+      "Haldi",
+      "Wedding"
+    ],
+    "message": "",
+    "createdAt": "2026-10-15T19:42:00.577Z"
+  },
+  {
+    "id": "rsvp_1792093181071_jbxv1",
+    "name": "Adi",
+    "email": "adityalpu27@gmail.com",
+    "phone": "9821910258",
+    "attendance": "yes",
+    "events": [
+      "Mehendi",
+      "Sagan",
+      "Haldi",
+      "Wedding"
+    ],
+    "message": "Heartiest congratulations Dr. Sonali & Dr. Sudev!",
+    "createdAt": "2026-10-15T19:39:41.071Z"
+  },
+  {
+    "id": "rsvp_1792092712787_d88iw",
+    "name": "adi",
+    "email": "adityalpu27@gmail.com",
+    "phone": "9821910258",
+    "attendance": "yes",
+    "food": "vegetarian",
+    "guestsCount": 2,
+    "events": [
+      "Mehendi",
+      "Sagan",
+      "Haldi",
+      "Wedding"
+    ],
+    "message": "",
+    "createdAt": "2026-10-15T19:31:52.787Z"
+  },
+  {
+    "id": "rsvp_1792092300276_h2opo",
+    "name": "Pooja & Rohan",
+    "email": "pooja.rohan@example.com",
+    "phone": "",
+    "attendance": "yes",
+    "food": "south",
+    "guestsCount": 2,
+    "events": [
+      "Mehendi",
+      "Sagan",
+      "Haldi",
+      "Wedding"
+    ],
+    "message": "Congratulations Dr. Sonali & Dr. Sudev! So excited for the grand celebration!",
+    "createdAt": "2026-10-15T19:25:00.276Z"
+  }
+]

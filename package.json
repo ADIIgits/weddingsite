@@ -1,0 +1,10 @@
+{
+  "name": "sonali-sudev-wedding-monorepo",
+  "version": "2.0.0",
+  "description": "Dr. Sonali & Dr. Sudev Wedding App - Separate React Frontend and Express Backend",
+  "scripts": {
+    "start:backend": "cd backend && node server.js",
+    "start:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build"
+  }
+}
